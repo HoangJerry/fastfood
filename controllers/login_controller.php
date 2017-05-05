@@ -15,7 +15,7 @@ class login_controller extends main_controller
 
 		if (mysqli_num_rows($result) > 0) {
 				$row = mysqli_fetch_assoc($result);
-	    		$_SESSION["user"]= $row["name"];
+	    		$_SESSION["user"] = $row["username"];
 	 			header( "Location: ".html_helpers::url(array('ctl'=>'menu')));
 		} else {
 		    header( "Location: ".html_helpers::url(array('ctl'=>'login')));
@@ -25,7 +25,7 @@ class login_controller extends main_controller
 
 	public function signout(){
 		unset($_SESSION["user"]);
-		header( "Location: ".html_helpers::url(array('ctl'=>'login')));
+		header( "Location: ".html_helpers::url(array('ctl'=>'home')));
 
 	}
 

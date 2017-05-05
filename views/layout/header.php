@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)http://www.themezaa.com/html/h-code/blog-grid-full-width.html -->
-<html class=" js " lang="en" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
         <title>Fast Food</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Fast food delivery!">
         <meta name="keywords" content="">
-        
         <meta name="author" content="ThemeZaa">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
         <!-- favicon -->
@@ -53,7 +54,9 @@
         <link rel="stylesheet" href="./media/css/style.css" type="text/css">
         <link rel="stylesheet" href="./media/css/style.css" >
         
-    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}
+    </style>
+</head>
     <body>
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -65,7 +68,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="./media/img/logo.png" alt="logolayana"></a>
+                <a class="navbar-brand page-scroll" href="<?php echo html_helpers::url(array('ctl'=>'home')); ?>"><img src="./media/img/logo.png" alt="logolayana"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -77,13 +80,26 @@
                     <a class="page-scroll" href="<?php echo html_helpers::url(array('ctl'=>'menu')); ?>">Menu</a>
                     </li>
                     <li>
-                    <a class="page-scroll" href="#services">Services</a>
+                    <a class="page-scroll" href="">Services</a>
                     </li>
                     <li>
-                    <a class="page-scroll" href="#portfolio">Work</a>
+                    <a class="page-scroll" href="">Your Profile</a>
                     </li>
                     <li>
-                    <a class="page-scroll" href="<?php echo html_helpers::url(array('ctl'=>'login')); ?>">Login</a>
+                    <a class="page-scroll" href="<?php 
+                              if(!isset($_SESSION["user"]))
+                                {
+                                  echo html_helpers::url(array('ctl'=>'login'));}
+                              else
+                                { 
+                                echo html_helpers::url(array('ctl'=>'login','act'=>'signout'));
+                                }
+                               ?>"><?php 
+                                if(!isset($_SESSION["user"])) 
+                                  {echo"Login";} 
+                                else {echo "Sign Out";}
+                              ?>
+                    </a>
                     </li>
                     <li>
                     <a class="page-scroll" href="#contact">Contact</a>

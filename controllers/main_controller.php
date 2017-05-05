@@ -4,7 +4,7 @@ class main_controller {
 	protected $model; 
 	protected $controller = "home";
 	protected $action = "index";
-	public	 $components;
+	public	  $components;
 	//protected $htmlhp;
 	
 	public function  __construct() {
@@ -88,13 +88,6 @@ class main_controller {
 	
     public function setProperty($name, $value) {
         $this->$name = $value;
-    }
-
-    public function checkLogin(){
-    	// session_start();
-		if (!isset($_SESSION['username'])) {
-			header( "Location: ".html_helpers::url(array('ctl'=>'login','act'=>'login')));
-		}
     }
 }
 ?>
