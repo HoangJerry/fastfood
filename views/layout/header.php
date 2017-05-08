@@ -79,9 +79,9 @@
                     <li>
                     <a class="page-scroll" href="<?php echo html_helpers::url(array('ctl'=>'menu')); ?>">Menu</a>
                     </li>
-                    <li>
+                    <!-- <li>
                     <a class="page-scroll" href="">Services</a>
-                    </li>
+                    </li> -->
                     <li>
                     <a class="page-scroll" href="">Your Profile</a>
                     </li>

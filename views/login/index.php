@@ -6,6 +6,7 @@
 		.form .register-form {
 		  display: none;
 		}
+
 	</style>
 	<div class="login-page col-lg-offset-3 col-lg-6 col-md-6 col-xs-12" style="padding-top: 120px; ">
 	  <div class="form">

@@ -5,6 +5,7 @@ class Main_Model
 	protected $table;
 	public function __construct(){
 		$this->con =  mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+		$this->con->set_charset("utf8");
 		if(mysqli_connect_error()) {
 			echo "Failed to connect to MySQL". mysqli_connect_error();exit();
 		}

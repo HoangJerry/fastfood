@@ -82,14 +82,20 @@
                 <div class="row blog-full-width no-margin xs-no-padding">
                     <!-- post item -->
                     <?php while($row = mysqli_fetch_array($this->records)) : ?>
+                        
                     <div class="col-md-3 col-sm-6 col-xs-12 blog-listing wow fadeInUp animated" data-wow-duration="300ms" style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
-                        <div class="blog-image"><a href=""><img src="./media/H-Code _ Responsive &amp; Multi-Purpose One_Multi Page Template_files/blog-post16.jpg" alt=""></a></div>
+                        <div class="blog-image"><a href=""><img src="./media/H-Code _ Responsive &amp; Multi-Purpose One_Multi Page Template_files/<?php echo $row["photo"]; ?>" alt=""></a></div>
                         <div class="blog-details">
                             <div class="blog-date">
                                 <a href=""><?php echo $row["name"] ?></a> |<?php echo $row["cost"]?>
                             </div>
                             <div class="blog-title">
                                 <a href=""><?php echo $row["name"] ?></a>
+                            </div>
+                            <div class="form">
+                                 <form class="login-form" method="POST" action="<?php echo html_helpers::url(array('ctl'=>'login','act'=>'login')); ?>">
+                                        <button class="contact submit btn btn-primary btn-xl">login</button>
+                                </form>
                             </div>
                             <div class="separator-line bg-black no-margin-lr"></div>
                         </div>
