@@ -9,7 +9,9 @@
                         Fast-Food</h2>
                         <h1 style="text-transform : none" data-animation="animated bounceInUp">
                         Daily</h1>
-                        <a href="<?php echo html_helpers::url(array('ctl'=>'login')); ?>" class="btn btn-ghost btn-lg" data-animation="animated fadeInLeft">Register</a><a href="<?php echo html_helpers::url(array('ctl'=>'login')); ?>" class="btn btn-primary btn-lg" data-animation="animated fadeInRight">Login</a>
+                        <a href="<?php echo html_helpers::url(array('ctl'=>'login')); ?>" class="btn 
+                        btn-ghost btn-lg" data-animation="animated fadeInLeft">Register</a>
+                        <a href="<?php echo html_helpers::url(array('ctl'=>'login')); ?>" class="btn btn-primary btn-lg" data-animation="animated fadeInRight">Login</a>
                     </div>
                 </div>
                 <!-- /.item -->
