@@ -93,15 +93,20 @@
                                 <a href=""><?php echo $row["name"] ?></a>
                             </div>
                             <div class="form">
-                                 <form class="login-form" method="POST" action="<?php echo html_helpers::url(array('ctl'=>'login','act'=>'login')); ?>">
-                                        <button class="contact submit btn btn-primary btn-xl">login</button>
+                                 <form class="login-form" method="POST" action="">
+                                        <button style = "margin-right: 20px;  " class="contact submit btn btn-primary btn-xl space-margin">Xem</button>
+                                        <?php if ($_SESSION["user"] =="admin"):?> 
+                                            <button class="contact submit btn btn-primary btn-xl space-margin" style="margin-left: 50px">Xóa</button>
+                                        <?php else: ?>
+                                            <button class="contact submit btn btn-primary btn-xl space-margin" style="margin-left: 50px">Order</button>
+                                        <?php endif ?>
                                 </form>
                             </div>
                             <div class="separator-line bg-black no-margin-lr"></div>
                         </div>
                     </div>  
                     <?php endwhile; ?>
-                    <!-- end post item -->
+                    <!-- end post items -->
                 </div>
                 <div class="row no-margin">
                     <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
