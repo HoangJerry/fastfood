@@ -60,6 +60,10 @@
                                     if (isset($_SESSION["user"]))
                                     {
                                       echo "Hello ".$_SESSION["user"];
+                                      if ($_SESSION["user"] =="admin")
+                                      {
+                                        echo "<a href='".html_helpers::url(array('ctl'=>'menu','act'=>'add'))."'><br><span class='glyphicon glyphicon-plus'></span></a>";
+                                      }
                                     } 
                             ?>
                             </a>
@@ -91,17 +95,18 @@
                             </div>
                             <div class="blog-title">
                                 <a href=""><?php echo $row["name"] ?></a>
-                            </div>
-                            <div class="form">
-                                 <form class="login-form" method="POST" action="">
-                                        <button style = "margin-right: 20px;  " class="contact submit btn btn-primary btn-xl space-margin">Xem</button>
-                                        <?php if ($_SESSION["user"] =="admin"):?> 
-                                            <button class="contact submit btn btn-primary btn-xl space-margin" style="margin-left: 50px">Xóa</button>
-                                        <?php else: ?>
-                                            <button class="contact submit btn btn-primary btn-xl space-margin" style="margin-left: 50px">Order</button>
-                                        <?php endif ?>
-                                </form>
-                            </div>
+                            </div>                            
+                            <?php if (isset($_SESSION["user"])): ?> 
+                                <?php if ($_SESSION["user"] =="admin"): ?> 
+                                    <a href="" style = " width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Edit</a>
+                                    <a href="" class="contact submit btn btn-primary btn-xl space-margin" style="float:right; margin-right: 0px;">Del</a>
+                                <?php else: ?>
+                                    <a href="" style = "width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Detail</a>
+                                    <a href="" class="contact submit btn btn-primary btn-xl space-margin" style="float:right; margin-right: 0px;">Order</a>
+                                <?php endif ?>
+                            <?php else:?>
+                                <a href="" style = "width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Detail</a>
+                            <?php endif ?>
                             <div class="separator-line bg-black no-margin-lr"></div>
                         </div>
                     </div>  

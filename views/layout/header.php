@@ -83,7 +83,7 @@
                     <a class="page-scroll" href="">Services</a>
                     </li> -->
                     <li>
-                    <a class="page-scroll" href="">Your Profile</a>
+                    <a class="page-scroll" href="<?php echo html_helpers::url(array('ctl'=>'profile')); ?>">Your Profile</a>
                     </li>
                     <li>
                     <a class="page-scroll" href="<?php 
