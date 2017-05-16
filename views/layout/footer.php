@@ -101,7 +101,7 @@
             <div class="col-md-12 text-center">
                 <h1 class="bottombrand wow flipInX" style="text-transform : none">Daily</h1>
                 <p>
-                    &copy; 2016 Editor HoangTN
+                    &copy; 2017 Editor HoangTN
                 </p>
             </div>
         </div>

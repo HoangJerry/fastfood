@@ -88,7 +88,7 @@
                     <?php while($row = mysqli_fetch_array($this->records)) : ?>
                         
                     <div class="col-md-3 col-sm-6 col-xs-12 blog-listing wow fadeInUp animated" data-wow-duration="300ms" style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
-                        <div class="blog-image"><a href=""><img src="./media/H-Code _ Responsive &amp; Multi-Purpose One_Multi Page Template_files/<?php echo $row["photo"]; ?>" alt=""></a></div>
+                        <div class="blog-image"><a href=""><img src="./media/img/upload/<?php echo $row["photo"]; ?>" alt="$row['name']"></a></div>
                         <div class="blog-details">
                             <div class="blog-date">
                                 <a href=""><?php echo $row["name"] ?></a> |<?php echo $row["cost"]?>
@@ -98,8 +98,8 @@
                             </div>                            
                             <?php if (isset($_SESSION["user"])): ?> 
                                 <?php if ($_SESSION["user"] =="admin"): ?> 
-                                    <a href="" style = " width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Edit</a>
-                                    <a href="" class="contact submit btn btn-primary btn-xl space-margin" style="float:right; margin-right: 0px;">Del</a>
+                                    <a href="<?php echo html_helpers::url(array('ctl'=>'menu','act'=>'edit','params'=>array('id'=>$row['id']))); ?>" style = " width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Edit</a>
+                                    <a href="<?php echo $row["id"] ?>" class="contact submit btn btn-primary btn-xl space-margin" id="delButton" style="float:right; margin-right: 0px;">Del</a>
                                 <?php else: ?>
                                     <a href="" style = "width: 50%;  " class="contact submit btn btn-primary btn-xl space-margin">Detail</a>
                                     <a href="" class="contact submit btn btn-primary btn-xl space-margin" style="float:right; margin-right: 0px;">Order</a>
@@ -122,4 +122,7 @@
                 </div>
             </div>
         </section>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="./media/js/search.js"></script>
+<script src="./media/js/delete.js"></script>
 <?php include_once 'views/layout/footer.php'; ?>

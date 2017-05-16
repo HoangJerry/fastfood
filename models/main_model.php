@@ -108,7 +108,7 @@ class Main_Model
 	public function addRecord($datas) {
 		$fields = $values = '';
 		$i=0;
-		foreach($datas as $k=>$v) {
+		foreach (($datas) as $k => $v) {
 			if($i) {
 				$fields .=',';
 				$values .=',';
